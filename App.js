@@ -15,14 +15,18 @@ export default class App extends React.Component {
   render() {
     return (
 			<SafeAreaView
-				style={style.page}
+				style={style.cover}
 			>
-				<Head />
+				<SafeAreaView
+					style={style.page}
+				>
+					<Head />
 
-				<ScrollView>
-					<Index />
-				</ScrollView>
-      </SafeAreaView>
+					<ScrollView>
+						<Index />
+					</ScrollView>
+				</SafeAreaView>
+			</SafeAreaView>
     );
   }
 }

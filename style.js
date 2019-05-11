@@ -6,9 +6,17 @@ import {
 import Head from "./head";
 
 export default StyleSheet.create({
-	page: {
-		flex: 1
+	cover: {
+		flex: 1,
+		padding: 26,
+		backgroundColor: "#303030"
 	},
+	page: {
+		flex: 1,
+		margin: 26,
+		backgroundColor: "#fff"
+	},
+
 	body: {
 		height: 0
 	},
