@@ -6,6 +6,13 @@ import {
 import Head from "./head";
 
 export default StyleSheet.create({
+	page: {
+		flex: 1
+	},
+	body: {
+		height: 0
+	},
+
 	cont: {
 		padding: 8
 	},

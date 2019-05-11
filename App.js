@@ -1,6 +1,7 @@
 import React from "react";
 import {
-	SafeAreaView
+	SafeAreaView,
+	ScrollView
 } from "react-native";
 
 import Head from "./head";
@@ -8,13 +9,19 @@ import Index from "./index";
 
 import auth from "./auth";
 
+import style from "./style";
+
 export default class App extends React.Component {
   render() {
     return (
-      <SafeAreaView>
+			<SafeAreaView
+				style={style.page}
+			>
 				<Head />
 
-				<Index />
+				<ScrollView>
+					<Index />
+				</ScrollView>
       </SafeAreaView>
     );
   }
