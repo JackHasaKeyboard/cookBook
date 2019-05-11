@@ -32,25 +32,70 @@ export default class extends React.Component {
 
     ref.on("value", snap => {
       this.setState({
-        recipe: snap.val()
+        recipe: snap.val().sort(
+					(a, b) => {
+						if (a.title < b.title) {
+							return -1;
+						}
+
+						if (a.title > b.title) {
+							return 1;
+						}
+
+						return 0;
+					}
+				)
       });
     });
 	}
+
+	alphabet() {
+    let c = [];
+    for (
+			let i = "a".charCodeAt(0);
+			i <= "z".charCodeAt(0);
+			++i
+		) {
+      c.push(String.fromCharCode(i));
+    }
+
+    return c;
+  }
 
   render() {
     return (
 			<View
 				style={style.cont}
 			>
-				{
-					this.state.recipe.map((recipe, k) => {
-						return (
-							<Text
-								key={k}
-							>{recipe.title}</Text>
-						);
-					})
-				}
+				<View
+					style={style.cont}
+				>
+					{
+						this.alphabet().map((c, k) => {
+							return (
+								<View>
+									<Text>{c}</Text> 
+
+									<View
+										key={k}
+									>
+										{
+											this.state.recipe.map((recipe, k) => {
+												if (recipe.title[0].toLowerCase() == c) {
+													return (
+														<Text
+															key={k}
+														>{recipe.title}</Text>
+													);
+												}
+											})
+										}
+									</View>
+								</View>
+							);
+						})
+					}
+				</View>
       </View>
     );
   }
