@@ -3,13 +3,28 @@ import {
 	SafeAreaView,
 	ScrollView
 } from "react-native";
+import {
+	createStackNavigator,
+	createAppContainer
+} from "react-navigation";
 
 import Head from "./head";
 import Index from "./index";
+import Recipe from "./recipe";
 
 import auth from "./auth";
 
 import style from "./style";
+
+const
+	Nav = createStackNavigator(
+		{
+			Index: Index,
+			Recipe: Recipe
+		}, {}
+	),
+
+	Cont = createAppContainer(Nav);
 
 export default class App extends React.Component {
   render() {
@@ -22,9 +37,7 @@ export default class App extends React.Component {
 				>
 					<Head />
 
-					<ScrollView>
-						<Index />
-					</ScrollView>
+					<Cont />
 				</SafeAreaView>
 			</SafeAreaView>
     );

@@ -1,7 +1,9 @@
 import React from "react";
 import {
 	View,
-	Text
+	Text,
+	ScrollView,
+	TouchableOpacity
 } from "react-native";
 
 import style from "./style";
@@ -64,44 +66,50 @@ export default class extends React.Component {
 
   render() {
     return (
-			<View
+			<ScrollView
 				style={style.cont}
 			>
-				<View
-					style={style.cont}
-				>
-					{
-						this.alphabet().map((c, k) => {
-							return (
-								<View
-									style={style.cont}
-								>
-									<Text
-										style={style.head}
-									>{c}</Text> 
+				{
+					this.alphabet().map((c, k) => {
+						return (
+							<View
+								style={style.cont}
+							>
+								<Text
+									style={style.head}
+								>{c}</Text> 
 
-									<View
-										key={k}
-									>
-										{
-											this.state.recipe.map((recipe, k) => {
-												if (recipe.title[0].toLowerCase() == c) {
-													return (
+								<View
+									key={k}
+								>
+									{
+										this.state.recipe.map((recipe, k) => {
+											if (recipe.title[0].toLowerCase() == c) {
+												return (
+													<TouchableOpacity
+														onPress={
+															() => {
+																this.props.navigation.navigate(
+																	"Recipe"
+																)
+															}
+														}
+													>
 														<Text
 															key={k}
 															style={style.btn}
 														>{recipe.title}</Text>
-													);
-												}
-											})
-										}
-									</View>
+													</TouchableOpacity>
+												);
+											}
+										})
+									}
 								</View>
-							);
-						})
-					}
-				</View>
-      </View>
+							</View>
+						);
+					})
+				}
+      </ScrollView>
     );
   }
 }
