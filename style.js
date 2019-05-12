@@ -30,5 +30,14 @@ export default StyleSheet.create({
 		fontSize: 80,
 		textAlign: "center",
 		margin: 8
+	},
+
+	head: {
+		fontSize: 42,
+		textTransform: "uppercase"
+	},
+
+	btn: {
+		fontSize: 26
 	}
 });

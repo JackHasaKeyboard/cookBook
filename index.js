@@ -73,8 +73,12 @@ export default class extends React.Component {
 					{
 						this.alphabet().map((c, k) => {
 							return (
-								<View>
-									<Text>{c}</Text> 
+								<View
+									style={style.cont}
+								>
+									<Text
+										style={style.head}
+									>{c}</Text> 
 
 									<View
 										key={k}
@@ -85,6 +89,7 @@ export default class extends React.Component {
 													return (
 														<Text
 															key={k}
+															style={style.btn}
 														>{recipe.title}</Text>
 													);
 												}
