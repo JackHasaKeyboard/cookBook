@@ -23,7 +23,7 @@ export default class extends React.Component {
 		super(props);
 
 		this.state = {
-			recipe: []
+			recipe: {}
 		};
 	}
 
@@ -34,19 +34,7 @@ export default class extends React.Component {
 
     ref.on("value", snap => {
       this.setState({
-        recipe: snap.val().sort(
-					(a, b) => {
-						if (a.title < b.title) {
-							return -1;
-						}
-
-						if (a.title > b.title) {
-							return 1;
-						}
-
-						return 0;
-					}
-				)
+				recipe: snap.val()
       });
     });
 	}
@@ -83,14 +71,19 @@ export default class extends React.Component {
 									key={k}
 								>
 									{
-										this.state.recipe.map((recipe, k) => {
-											if (recipe.title[0].toLowerCase() == c) {
+										Object.keys(this.state.recipe).map((k) => {
+											let inst = this.state.recipe[k];
+
+											if (inst.title[0].toLowerCase() == c) {
 												return (
 													<TouchableOpacity
 														onPress={
 															() => {
 																this.props.navigation.navigate(
-																	"Recipe"
+																	"Recipe",
+																	{
+																		k: k
+																	}
 																)
 															}
 														}
@@ -98,7 +91,7 @@ export default class extends React.Component {
 														<Text
 															key={k}
 															style={style.btn}
-														>{recipe.title}</Text>
+														>{inst.title}</Text>
 													</TouchableOpacity>
 												);
 											}
