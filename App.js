@@ -11,6 +11,7 @@ import {
 import Head from "./head";
 import Index from "./index";
 import Recipe from "./recipe";
+import Profile from "./profile";
 
 import auth from "./auth";
 
@@ -20,7 +21,8 @@ const
 	Nav = createStackNavigator(
 		{
 			Index: Index,
-			Recipe: Recipe
+			Recipe: Recipe,
+			Profile: Profile
 		}, {}
 	),
 

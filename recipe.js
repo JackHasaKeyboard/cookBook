@@ -2,7 +2,8 @@ import React from "react";
 import {
 	ScrollView,
 	Text,
-	View
+	View,
+	TouchableOpacity
 } from "react-native";
 
 import style from "./style";
@@ -43,7 +44,17 @@ export default class extends React.Component {
 				<View
 					style={style.cont}
 				>
-					<Text>{recipe.title}</Text>
+					<TouchableOpacity
+						onPress={
+							() => {
+								this.props.navigation.navigate(
+									"Profile"
+								)
+							}
+						}
+					>
+						<Text>{recipe.title}</Text>
+					</TouchableOpacity>
 					<Text>{recipe.author}</Text>
 				</View>
 
