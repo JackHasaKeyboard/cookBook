@@ -1,7 +1,9 @@
 import React from "react";
 import {
 	SafeAreaView,
-	ScrollView
+	ScrollView,
+	TouchableOpacity,
+	Text
 } from "react-native";
 import {
 	createStackNavigator,
@@ -12,6 +14,7 @@ import Head from "./head";
 import Index from "./index";
 import Recipe from "./recipe";
 import Profile from "./profile";
+import SignUp from "./signUp";
 
 import auth from "./auth";
 
@@ -22,7 +25,8 @@ const
 		{
 			Index: Index,
 			Recipe: Recipe,
-			Profile: Profile
+			Profile: Profile,
+			SignUp: SignUp
 		}, {}
 	),
 

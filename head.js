@@ -1,10 +1,13 @@
 import React from "react";
 import {
 	View,
-	Text
+	Text,
+	TouchableOpacity
 } from "react-native";
 
 import style from "./style";
+
+import SignUp from "./signUp";
 
 export default class Head extends React.Component {
   render() {

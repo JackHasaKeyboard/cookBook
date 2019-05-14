@@ -57,6 +57,22 @@ export default class extends React.Component {
 			<ScrollView
 				style={style.cont}
 			>
+				<View
+					style={style.cont}
+				>
+					<TouchableOpacity
+						onPress={
+							() => {
+								this.props.navigation.navigate(
+									"SignUp"
+								)
+							}
+						}
+					>
+						<Text>Sign Up</Text>
+					</TouchableOpacity>
+				</View>
+
 				{
 					this.alphabet().map((c, k) => {
 						return (

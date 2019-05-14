@@ -39,5 +39,17 @@ export default StyleSheet.create({
 
 	btn: {
 		fontSize: 26
+	},
+
+	field: {
+		margin: 8,
+		padding: 8,
+		color: "grey",
+		borderColor: "grey",
+		borderWidth: 1
+	},
+
+	err: {
+		color: "red"
 	}
 });
