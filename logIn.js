@@ -16,16 +16,15 @@ export default class extends React.Component {
 		super(props);
 
 		this.state = {
-			name: "",
 			email: "",
 			password: ""
 		};
 	}
 
-	handle() {
-		firebase
+	handle = () => {
+    firebase
       .auth()
-      .createUserWithEmailAndPassword(
+			.signInWithEmailAndPassword(
 				this.state.email,
 				this.state.password
 			)
@@ -34,7 +33,7 @@ export default class extends React.Component {
 					this.props.navigation.navigate("Profile");
 				}
 			)
-      .catch((err) => this.setState({
+			.catch(err => this.setState({
 				err: err.message
 			}));
 	}
@@ -61,22 +60,10 @@ export default class extends React.Component {
 				<View
 					style={style.cont}
 				>
-					<Text>Sign Up</Text>
+					<Text>Log In</Text>
 				</View>
 
 				<View>
-					<TextInput
-						style={style.field}
-						placeholder="Name"
-						autoCapitalize="none"
-						value={this.state.name}
-						onChangeText={
-							(name) => this.setState({
-								name
-							})
-						}
-					/>
-
 					<TextInput
 						style={style.field}
 						placeholder="E-mail"

@@ -15,6 +15,7 @@ import Index from "./index";
 import Recipe from "./recipe";
 import Profile from "./profile";
 import SignUp from "./signUp";
+import LogIn from "./logIn";
 
 import auth from "./auth";
 
@@ -26,7 +27,8 @@ const
 			Index: Index,
 			Recipe: Recipe,
 			Profile: Profile,
-			SignUp: SignUp
+			SignUp: SignUp,
+			LogIn: LogIn
 		}, {}
 	),
 

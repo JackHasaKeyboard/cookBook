@@ -71,6 +71,18 @@ export default class extends React.Component {
 					>
 						<Text>Sign Up</Text>
 					</TouchableOpacity>
+
+					<TouchableOpacity
+						onPress={
+							() => {
+								this.props.navigation.navigate(
+									"LogIn"
+								)
+							}
+						}
+					>
+						<Text>Log In</Text>
+					</TouchableOpacity>
 				</View>
 
 				{
