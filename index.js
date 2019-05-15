@@ -12,6 +12,8 @@ import * as firebase from "firebase";
 
 import auth from "./auth";
 
+import Ctrl from "./ctrl";
+
 if (!firebase.apps.length) {
   firebase.initializeApp(
 		auth.firebase
@@ -23,7 +25,8 @@ export default class extends React.Component {
 		super(props);
 
 		this.state = {
-			recipe: {}
+			recipe: {},
+			user: {}
 		};
 	}
 
@@ -37,6 +40,13 @@ export default class extends React.Component {
 				recipe: snap.val()
       });
     });
+
+		firebase.auth().onAuthStateChanged((user) => {
+				this.setState({
+					user: user
+				});
+			}
+		);
 	}
 
 	alphabet() {
@@ -57,33 +67,9 @@ export default class extends React.Component {
 			<ScrollView
 				style={style.cont}
 			>
-				<View
-					style={style.cont}
-				>
-					<TouchableOpacity
-						onPress={
-							() => {
-								this.props.navigation.navigate(
-									"SignUp"
-								)
-							}
-						}
-					>
-						<Text>Sign Up</Text>
-					</TouchableOpacity>
-
-					<TouchableOpacity
-						onPress={
-							() => {
-								this.props.navigation.navigate(
-									"LogIn"
-								)
-							}
-						}
-					>
-						<Text>Log In</Text>
-					</TouchableOpacity>
-				</View>
+				<Ctrl
+					navigation={this.props.navigation}
+				/>
 
 				{
 					this.alphabet().map((c, k) => {
