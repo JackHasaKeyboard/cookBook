@@ -18,7 +18,9 @@ export default class extends React.Component {
 
 		this.state = {
 			user: {},
-			recipe: {}
+			recipe: {},
+
+			currentUser: {}
 		};
 	}
 
@@ -37,6 +39,13 @@ export default class extends React.Component {
 				});
 			})
 		);
+
+		firebase.auth().onAuthStateChanged((user) => {
+				this.setState({
+					currentUser: user
+				});
+			}
+		);
 	}
 
   render() {
@@ -49,6 +58,29 @@ export default class extends React.Component {
 				>
 					<Text>{this.state.user.email}</Text>
 				</View>
+
+				{
+					this.state.user.email == this.state.currentUser.email && (
+						<View
+							style={style.cont}
+						>
+							<TouchableOpacity
+								onPress={
+									() => {
+										this.props.navigation.navigate(
+											"New",
+											{
+												user: this.state.currentUser
+											}
+										)
+									}
+								}
+							>
+								<Text>New</Text>
+							</TouchableOpacity>
+						</View>
+					)
+				}
 
 				{
 					this.state.recipe && (

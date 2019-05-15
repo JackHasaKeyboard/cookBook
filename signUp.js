@@ -22,14 +22,28 @@ export default class extends React.Component {
 		};
 	}
 
-	handle() {
+	handle = () => {
 		firebase
       .auth()
       .createUserWithEmailAndPassword(
 				this.state.email,
 				this.state.password
 			)
-			.then(() => this.props.navigation.navigate("Profile"))
+			.then(() => {
+				firebase
+					.auth()
+					.signInWithEmailAndPassword(
+						this.state.email,
+						this.state.password
+					).then(() => {
+						this.props.navigation.navigate(
+							"Profile",
+							{
+								user: firebase.auth().currentUser
+							}
+						);
+					});
+			})
       .catch((err) => this.setState({
 				err: err.message
 			}));

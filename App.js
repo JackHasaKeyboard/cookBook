@@ -16,6 +16,7 @@ import Recipe from "./recipe";
 import Profile from "./profile";
 import SignUp from "./signUp";
 import LogIn from "./logIn";
+import New from "./new";
 
 import auth from "./auth";
 
@@ -28,7 +29,8 @@ const
 			Recipe: Recipe,
 			Profile: Profile,
 			SignUp: SignUp,
-			LogIn: LogIn
+			LogIn: LogIn,
+			New: New
 		}, {}
 	),
 
