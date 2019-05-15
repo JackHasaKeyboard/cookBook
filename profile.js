@@ -51,29 +51,31 @@ export default class extends React.Component {
 				</View>
 
 				{
-					Object.keys(this.state.recipe).map((k) => {
-						let inst = this.state.recipe[k];
+					this.state.recipe && (
+						Object.keys(this.state.recipe).map((k) => {
+							let inst = this.state.recipe[k];
 
-						return (
-							<TouchableOpacity
-								onPress={
-									() => {
-										this.props.navigation.navigate(
-											"Recipe",
-											{
-												k: k
-											}
-										)
+							return (
+								<TouchableOpacity
+									onPress={
+										() => {
+											this.props.navigation.navigate(
+												"Recipe",
+												{
+													k: k
+												}
+											)
+										}
 									}
-								}
-							>
-								<Text
-									key={k}
-									style={style.btn}
-								>{inst.title}</Text>
-							</TouchableOpacity>
-						);
-					})
+								>
+									<Text
+										key={k}
+										style={style.btn}
+									>{inst.title}</Text>
+								</TouchableOpacity>
+							);
+						})
+					)
 				}
 			</ScrollView>
     );
