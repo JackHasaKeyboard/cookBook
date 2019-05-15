@@ -42,10 +42,11 @@ export default class extends React.Component {
 		if (this.state.user) {
 			return (
 				<View
-					style={style.cont}
+					style={style.ctrl}
 				>
 					<TouchableOpacity
 						onPress={() => this.props.navigation.navigate("Profile")}
+						style={style.btn}
 					>
 						<Text>{this.state.user.email}</Text>
 					</TouchableOpacity>
@@ -59,6 +60,12 @@ export default class extends React.Component {
 									.then(() => this.props.navigation.navigate("Index"));
 							}
 						}
+						style={[
+							style.btn,
+							{
+								marginLeft: "auto"
+							}
+						]}
 					>
 						<Text>Log Out</Text>
 					</TouchableOpacity>
@@ -67,16 +74,23 @@ export default class extends React.Component {
 		} else {
 			return (
 				<View
-					style={style.cont}
+					style={style.ctrl}
 				>
 					<TouchableOpacity
 						onPress={() => this.props.navigation.navigate("SignUp")}
+						style={style.btn}
 					>
 						<Text>Sign Up</Text>
 					</TouchableOpacity>
 
 					<TouchableOpacity
 						onPress={() => this.props.navigation.navigate("LogIn")}
+						style={[
+							style.btn,
+							{
+								marginLeft: "auto"
+							}
+						]}
 					>
 						<Text>Log In</Text>
 					</TouchableOpacity>

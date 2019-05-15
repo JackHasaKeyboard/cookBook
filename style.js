@@ -37,8 +37,13 @@ export default StyleSheet.create({
 		textTransform: "uppercase"
 	},
 
+	ctrl: {
+		flexDirection: "row"
+	},
+
 	btn: {
-		fontSize: 26
+		fontSize: 26,
+		padding: 8
 	},
 
 	field: {
