@@ -32,11 +32,10 @@ export default class extends React.Component {
 		});
 
 		firebase.auth().onAuthStateChanged((user) => {
-				this.setState({
-					user: user
-				});
-			}
-		);
+			this.setState({
+				user: user
+			});
+		});
 	}
 
 	render() {
@@ -46,13 +45,7 @@ export default class extends React.Component {
 					style={style.cont}
 				>
 					<TouchableOpacity
-						onPress={
-							() => {
-								this.props.navigation.navigate(
-									"Profile"
-								)
-							}
-						}
+						onPress={() => this.props.navigation.navigate("Profile")}
 					>
 						<Text>{this.state.user.email}</Text>
 					</TouchableOpacity>
@@ -63,12 +56,7 @@ export default class extends React.Component {
 								firebase
 									.auth()
 									.signOut()
-									.then(() => {
-										() => this.props.navigation.navigate(
-											"Index"
-										)
-									}
-								);
+									.then(() => this.props.navigation.navigate("Index"));
 							}
 						}
 					>
@@ -82,25 +70,13 @@ export default class extends React.Component {
 					style={style.cont}
 				>
 					<TouchableOpacity
-						onPress={
-							() => {
-								this.props.navigation.navigate(
-									"SignUp"
-								)
-							}
-						}
+						onPress={() => this.props.navigation.navigate("SignUp")}
 					>
 						<Text>Sign Up</Text>
 					</TouchableOpacity>
 
 					<TouchableOpacity
-						onPress={
-							() => {
-								this.props.navigation.navigate(
-									"LogIn"
-								)
-							}
-						}
+						onPress={() => this.props.navigation.navigate("LogIn")}
 					>
 						<Text>Log In</Text>
 					</TouchableOpacity>
