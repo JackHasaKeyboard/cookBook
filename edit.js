@@ -18,10 +18,6 @@ export default class extends React.Component {
     super(props);
 
     this.state = {
-			user: {},
-
-			email: "",
-
 			title: "",
 			ingredient: [],
 			note: "",
@@ -32,43 +28,45 @@ export default class extends React.Component {
   }
 
 	componentDidMount() {
-    this.setState({
-			user: this.props.navigation.getParam("user"),
+		const
+			root = firebase.database().ref(),
+      ref = root.child("recipe");
 
-			email: this.props.navigation.getParam("user").email,
-
-			title: "",
-			ingredient: [
-				""
-			],
-			note: "",
-			step: [
+		ref.on("value", snap => {
+			this.setState(
 				{
-					header: "",
-					desc: ""
+					recipe: snap.val()[this.props.navigation.getParam("k")]
+				},
+				() => {
+					this.setState({
+						title: this.state.recipe.title,
+						ingredient: this.state.recipe.ingredient,
+						note: this.state.recipe.note,
+						step: this.state.recipe.step
+					});
 				}
-			],
-
-			err: null
-    });
+			);
+		});
 	}
 
-	post = () => {
-		let k = firebase.database().ref().child("recipe").push(
-			{
-				"email": this.state.email,
+	update = () => {
+		const
+			root = firebase.database().ref(),
+			ref = root.child("recipe/" + this.props.navigation.getParam("k"));
 
-				"title": this.state.title,
-				"ingredient": this.state.ingredient,
-				"note": this.state.note,
-				"step": this.state.step
+		ref.update(
+			{
+				title: this.state.title,
+				ingredient: this.state.ingredient,
+				note: this.state.note,
+				step: this.state.step
 			}
-		).key;
+		);
 
 		this.props.navigation.navigate(
 			"Recipe",
 			{
-				k: k
+				k: this.props.navigation.getParam("k")
 			}
 		);
 	}
@@ -88,12 +86,8 @@ export default class extends React.Component {
 							title: title
 						})
 					}
-					value={
-						this.state.title
-					}
-					style={
-						style.field
-					}
+					value={this.state.title}
+					style={style.field}
 				/>
 
 				<Text>
@@ -108,12 +102,8 @@ export default class extends React.Component {
 							note: note
 						})
 					}
-					value={
-						this.state.note
-					}
-					style={
-						style.field
-					}
+					value={this.state.note}
+					style={style.field}
 				/>
 
 				<View
@@ -155,11 +145,7 @@ export default class extends React.Component {
 												this.state.ingredient[i] = txt;
 											}
 										}
-									>
-										{
-											val.desc
-										}
-									</TextInput>
+									>{val}</TextInput>
 								)
 							})
 						}
@@ -229,14 +215,10 @@ export default class extends React.Component {
 				</View>
 
 				<View
-					style={
-						style.cont
-					}
+					style={style.cont}
 				>
 					<TouchableOpacity
-						onPress={
-							this.post
-						}
+						onPress={this.update}
 					>
 						<Text>
 							Enter

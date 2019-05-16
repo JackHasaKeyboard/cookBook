@@ -18,7 +18,9 @@ export default class extends React.Component {
 
     this.state = {
       ln: [],
-      recipe: []
+      recipe: [],
+
+			currentUser: {}
     };
   }
 
@@ -32,6 +34,13 @@ export default class extends React.Component {
 				recipe: snap.val()[this.props.navigation.getParam("k")]
 			});
 		});
+
+		firebase.auth().onAuthStateChanged((user) => {
+				this.setState({
+					currentUser: user
+				});
+			}
+		);
 	}
 
   render() {
@@ -44,6 +53,29 @@ export default class extends React.Component {
 				<View
 					style={style.cont}
 				>
+					{
+						recipe.email == this.state.currentUser.email && (
+							<View
+								style={style.cont}
+							>
+								<TouchableOpacity
+									onPress={
+										() => {
+											this.props.navigation.navigate(
+												"Edit",
+												{
+													k: this.props.navigation.getParam("k")
+												}
+											)
+										}
+									}
+								>
+									<Text>Edit</Text>
+								</TouchableOpacity>
+							</View>
+						)
+					}
+
 					<TouchableOpacity
 						onPress={
 							() => {
@@ -92,8 +124,8 @@ export default class extends React.Component {
 							? recipe.step.map((inst) => {
 								return (
 									<View>
+										<Text>{inst.header}</Text>
 										<Text>{inst.desc}</Text>
-										<Text>{inst.title}</Text>
 									</View>
 								);
 							})

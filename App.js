@@ -17,6 +17,7 @@ import Profile from "./profile";
 import SignUp from "./signUp";
 import LogIn from "./logIn";
 import New from "./new";
+import Edit from "./edit";
 
 import auth from "./auth";
 
@@ -30,7 +31,8 @@ const
 			Profile: Profile,
 			SignUp: SignUp,
 			LogIn: LogIn,
-			New: New
+			New: New,
+			Edit: Edit
 		}, {}
 	),
 
