@@ -56,7 +56,7 @@ export default class extends React.Component {
 				<View
 					style={style.cont}
 				>
-					<Text>{this.state.user.email}</Text>
+					<Text>{this.state.user.displayName}</Text>
 				</View>
 
 				{

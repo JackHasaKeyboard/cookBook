@@ -30,7 +30,7 @@ export default class extends React.Component {
 			ref = root.child("recipe");
 
 		ref.on("value", snap => {
-			this.setState({
+			this.setState( {
 				recipe: snap.val()[this.props.navigation.getParam("k")]
 			});
 		});

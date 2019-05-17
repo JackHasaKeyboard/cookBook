@@ -21,6 +21,7 @@ export default class extends React.Component {
 			user: {},
 
 			email: "",
+			author: "",
 
 			title: "",
 			ingredient: [],
@@ -36,6 +37,7 @@ export default class extends React.Component {
 			user: this.props.navigation.getParam("user"),
 
 			email: this.props.navigation.getParam("user").email,
+			author: this.props.navigation.getParam("user").displayName,
 
 			title: "",
 			ingredient: [
@@ -57,6 +59,7 @@ export default class extends React.Component {
 		let k = firebase.database().ref().child("recipe").push(
 			{
 				"email": this.state.email,
+				"author": this.state.author,
 
 				"title": this.state.title,
 				"ingredient": this.state.ingredient,
