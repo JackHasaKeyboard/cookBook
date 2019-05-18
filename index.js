@@ -68,7 +68,9 @@ export default class extends React.Component {
 				{
 					this.alphabet().map((c, k) => {
 						return (
-							<View>
+							<View
+								key={k}
+							>
 								<View
 									style={style.cont}
 								>
