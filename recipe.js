@@ -50,32 +50,32 @@ export default class extends React.Component {
 			<ScrollView
 				style={style.cont}
 			>
+				{
+					recipe.email == this.state.currentUser.email && (
+						<View
+							style={style.cont}
+						>
+							<TouchableOpacity
+								onPress={
+									() => {
+										this.props.navigation.navigate(
+											"Edit",
+											{
+												k: this.props.navigation.getParam("k")
+											}
+										)
+									}
+								}
+							>
+								<Text>Edit</Text>
+							</TouchableOpacity>
+						</View>
+					)
+				}
+
 				<View
 					style={style.cont}
 				>
-					{
-						recipe.email == this.state.currentUser.email && (
-							<View
-								style={style.cont}
-							>
-								<TouchableOpacity
-									onPress={
-										() => {
-											this.props.navigation.navigate(
-												"Edit",
-												{
-													k: this.props.navigation.getParam("k")
-												}
-											)
-										}
-									}
-								>
-									<Text>Edit</Text>
-								</TouchableOpacity>
-							</View>
-						)
-					}
-
 					<TouchableOpacity
 						onPress={
 							() => {
