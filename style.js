@@ -17,6 +17,16 @@ export default StyleSheet.create({
 		backgroundColor: "#fff"
 	},
 
+	head: {
+		backgroundColor: "#fff"
+	},
+	emblem: {
+		fontFamily: "Times New Roman",
+		fontSize: 80,
+		textAlign: "center",
+		margin: 8
+	},
+
 	body: {
 		height: 0
 	},
@@ -25,16 +35,14 @@ export default StyleSheet.create({
 		padding: 8
 	},
 
-	emblem: {
-		fontFamily: "Times New Roman",
-		fontSize: 80,
-		textAlign: "center",
-		margin: 8
+	h1: {
+		fontSize: 31
 	},
-
-	head: {
-		fontSize: 42,
-		textTransform: "uppercase"
+	h2: {
+		fontSize: 24
+	},
+	h3: {
+		fontSize: 18
 	},
 
 	ctrl: {

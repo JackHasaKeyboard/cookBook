@@ -19,7 +19,10 @@ export default class Head extends React.Component {
     return (
 			<View>
 				<View
-					style={style.cont}
+					style={[
+						style.cont,
+						style.head
+					]}
 				>
 					<DogEar
 						navigation={this.props.navigation}

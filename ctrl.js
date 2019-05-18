@@ -40,6 +40,7 @@ export default class extends React.Component {
 				<View
 					style={[
 						style.cont,
+						style.head,
 						style.ctrl
 					]}
 				>
@@ -80,6 +81,7 @@ export default class extends React.Component {
 				<View
 					style={[
 						style.cont,
+						style.head,
 						style.ctrl
 					]}
 				>

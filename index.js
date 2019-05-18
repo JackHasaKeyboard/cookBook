@@ -72,7 +72,12 @@ export default class extends React.Component {
 								style={style.cont}
 							>
 								<Text
-									style={style.head}
+									style={[
+										style.h1,
+										{
+											textTransform: "uppercase"
+										}
+									]}
 								>{c}</Text> 
 
 								<View
