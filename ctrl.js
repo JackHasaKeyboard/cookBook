@@ -22,15 +22,11 @@ export default class extends React.Component {
 		super(props);
 
 		this.state = {
-			navigation: {}
+			user: {}
 		};
 	}
 
 	componentDidMount() {
-		this.setState({
-			navigation: this.props.navigation
-		});
-
 		firebase.auth().onAuthStateChanged((user) => {
 			this.setState({
 				user: user
@@ -42,7 +38,10 @@ export default class extends React.Component {
 		if (this.state.user) {
 			return (
 				<View
-					style={style.ctrl}
+					style={[
+						style.cont,
+						style.ctrl
+					]}
 				>
 					<TouchableOpacity
 						onPress={() => this.props.navigation.navigate(
@@ -79,7 +78,10 @@ export default class extends React.Component {
 		} else {
 			return (
 				<View
-					style={style.ctrl}
+					style={[
+						style.cont,
+						style.ctrl
+					]}
 				>
 					<TouchableOpacity
 						onPress={() => this.props.navigation.navigate("SignUp")}

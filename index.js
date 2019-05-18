@@ -12,8 +12,6 @@ import * as firebase from "firebase";
 
 import auth from "./auth";
 
-import Ctrl from "./ctrl";
-
 if (!firebase.apps.length) {
   firebase.initializeApp(
 		auth.firebase
@@ -67,10 +65,6 @@ export default class extends React.Component {
 			<ScrollView
 				style={style.cont}
 			>
-				<Ctrl
-					navigation={this.props.navigation}
-				/>
-
 				{
 					this.alphabet().map((c, k) => {
 						return (

@@ -7,7 +7,8 @@ import {
 } from "react-native";
 import {
 	createStackNavigator,
-	createAppContainer
+	createAppContainer,
+	withNavigation
 } from "react-navigation";
 
 import Head from "./head";
@@ -18,6 +19,7 @@ import SignUp from "./signUp";
 import LogIn from "./logIn";
 import New from "./new";
 import Edit from "./edit";
+import DogEar from "./dogEar";
 
 import auth from "./auth";
 
@@ -33,7 +35,11 @@ const
 			LogIn: LogIn,
 			New: New,
 			Edit: Edit
-		}, {}
+		}, {
+			defaultNavigationOptions: {
+				header: (props) => <Head {...props} />
+			}
+		}
 	),
 
 	Cont = createAppContainer(Nav);
@@ -47,8 +53,6 @@ export default class App extends React.Component {
 				<SafeAreaView
 					style={style.page}
 				>
-					<Head />
-
 					<Cont />
 				</SafeAreaView>
 			</SafeAreaView>
