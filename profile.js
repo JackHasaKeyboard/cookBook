@@ -56,7 +56,9 @@ export default class extends React.Component {
 				<View
 					style={style.cont}
 				>
-					<Text>{this.state.user.displayName}</Text>
+					<Text
+						style={style.h1}
+					>{this.state.user.displayName}</Text>
 				</View>
 
 				{
@@ -102,7 +104,10 @@ export default class extends React.Component {
 								>
 									<Text
 										key={k}
-										style={style.btn}
+										style={[
+											style.btn,
+											style.h2
+										]}
 									>{inst.title}</Text>
 								</TouchableOpacity>
 							);

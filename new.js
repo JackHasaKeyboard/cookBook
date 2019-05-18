@@ -81,7 +81,9 @@ export default class extends React.Component {
 			<ScrollView
 				style={style.cont}
 			>
-				<Text>Title</Text>
+				<Text
+					style={style.h3}
+				>Title</Text>
 
 				<TextInput
 					placeholder="Title"
@@ -99,7 +101,9 @@ export default class extends React.Component {
 					}
 				/>
 
-				<Text>
+				<Text
+					style={style.h3}
+				>
 					Notes
 				</Text>
 
@@ -122,7 +126,9 @@ export default class extends React.Component {
 				<View
 					style={style.cont}
 				>
-					<Text>
+					<Text
+						style={style.h3}
+					>
 						Ingredients
 					</Text>
 
@@ -172,7 +178,9 @@ export default class extends React.Component {
 				<View
 					style={style.cont}
 				>
-					<Text>
+					<Text
+						style={style.h3}
+					>
 						Steps
 					</Text>
 

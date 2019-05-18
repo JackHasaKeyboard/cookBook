@@ -75,7 +75,9 @@ export default class extends React.Component {
 				<View
 					style={style.cont}
 				>
-					<Text>Sign Up</Text>
+					<Text
+						style={style.h1}
+					>Sign Up</Text>
 				</View>
 
 				<View>

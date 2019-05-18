@@ -85,15 +85,21 @@ export default class extends React.Component {
 							}
 						}
 					>
-						<Text>{recipe.title}</Text>
+						<Text
+							style={style.h1}
+						>{recipe.title}</Text>
 					</TouchableOpacity>
-					<Text>{recipe.author}</Text>
+					<Text
+						style={style.h2}
+					>{recipe.author}</Text>
 				</View>
 
 				<View
 					style={style.cont}
 				>
-					<Text>Notes</Text>
+					<Text
+						style={style.h3}
+					>Notes</Text>
 
 					<Text>{recipe.note}</Text>
 				</View>
@@ -101,7 +107,9 @@ export default class extends React.Component {
 				<View
 					style={style.cont}
 				>
-					<Text>Ingredients</Text>
+					<Text
+						style={style.h3}
+					>Ingredients</Text>
 
 					{
 						recipe.ingredient != undefined
@@ -117,7 +125,9 @@ export default class extends React.Component {
 				<View
 					style={style.cont}
 				>
-					<Text>Steps</Text>
+					<Text
+						style={style.h3}
+					>Steps</Text>
 
 					{
 						recipe.step != undefined
