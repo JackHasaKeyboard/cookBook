@@ -94,15 +94,19 @@ export default class extends React.Component {
 					>{recipe.author}</Text>
 				</View>
 
-				<View
-					style={style.cont}
-				>
-					<Text
-						style={style.h3}
-					>Notes</Text>
+				{
+					recipe.note != "" && (
+						<View
+							style={style.cont}
+						>
+							<Text
+								style={style.h3}
+							>Notes</Text>
 
-					<Text>{recipe.note}</Text>
-				</View>
+							<Text>{recipe.note}</Text>
+						</View>
+					)
+				}
 
 				<View
 					style={style.cont}
