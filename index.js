@@ -68,17 +68,19 @@ export default class extends React.Component {
 				{
 					this.alphabet().map((c, k) => {
 						return (
-							<View
-								style={style.cont}
-							>
-								<Text
-									style={[
-										style.h1,
-										{
-											textTransform: "uppercase"
-										}
-									]}
-								>{c}</Text> 
+							<View>
+								<View
+									style={style.cont}
+								>
+									<Text
+										style={[
+											style.h1,
+											{
+												textTransform: "uppercase"
+											}
+										]}
+									>{c}</Text> 
+								</View>
 
 								<View
 									key={k}
