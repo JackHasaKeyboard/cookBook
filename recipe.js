@@ -119,7 +119,7 @@ export default class extends React.Component {
 						recipe.ingredient != undefined
 							? recipe.ingredient.map((inst) => {
 								return (
-									<Text>{inst}</Text>
+									<Text>{`\u2022 ${inst}`}</Text>
 								);
 							})
 							: <Text>...</Text>
