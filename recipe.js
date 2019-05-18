@@ -76,6 +76,10 @@ export default class extends React.Component {
 				<View
 					style={style.cont}
 				>
+					<Text
+						style={style.h1}
+					>{recipe.title}</Text>
+
 					<TouchableOpacity
 						onPress={
 							() => {
@@ -86,12 +90,9 @@ export default class extends React.Component {
 						}
 					>
 						<Text
-							style={style.h1}
-						>{recipe.title}</Text>
+							style={style.h2}
+						>{recipe.author}</Text>
 					</TouchableOpacity>
-					<Text
-						style={style.h2}
-					>{recipe.author}</Text>
 				</View>
 
 				{
