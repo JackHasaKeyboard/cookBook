@@ -53,7 +53,7 @@ export default class extends React.Component {
 						)}
 						style={style.btn}
 					>
-						<Text>{this.state.user.email}</Text>
+						<Text>{this.state.user.displayName}</Text>
 					</TouchableOpacity>
 
 					<TouchableOpacity
