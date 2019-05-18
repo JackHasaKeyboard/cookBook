@@ -64,5 +64,9 @@ export default StyleSheet.create({
 
 	err: {
 		color: "red"
+	},
+
+	i: {
+		lineHeight: 24
 	}
 });

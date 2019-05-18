@@ -135,11 +135,30 @@ export default class extends React.Component {
 
 					{
 						recipe.step != undefined
-							? recipe.step.map((inst) => {
+							? recipe.step.map((inst, i) => {
 								return (
-									<View>
-										<Text>{inst.header}</Text>
-										<Text>{inst.desc}</Text>
+									<View
+										style={{
+											flexDirection: "row"
+										}}
+									>
+										<View
+											style={style.cont}
+										>
+											<Text
+												style={[
+													style.h2,
+													style.i
+												]}
+											>{i + 1}</Text>
+										</View>
+
+										<View
+											style={style.cont}
+										>
+											<Text>{inst.header}</Text>
+											<Text>{inst.desc}</Text>
+										</View>
 									</View>
 								);
 							})
