@@ -23,9 +23,13 @@ export default class Head extends React.Component {
 						style.head
 					]}
 				>
-					<DogEar
-						navigation={this.props.navigation}
-					/>
+					{
+						this.props.navigation.state.index > 0 && (
+							<DogEar
+								navigation={this.props.navigation}
+							/>
+						)
+					}
 
 					<Text
 						style={style.emblem}
