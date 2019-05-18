@@ -6,7 +6,6 @@ import {
 
 import style from "./style";
 
-import SignUp from "./signUp";
 import DogEar from "./dogEar";
 import Ctrl from "./ctrl";
 
