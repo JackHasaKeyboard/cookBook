@@ -91,6 +91,7 @@ export default class extends React.Component {
 
 							return (
 								<TouchableOpacity
+									key={k}
 									onPress={
 										() => {
 											this.props.navigation.navigate(

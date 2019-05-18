@@ -68,7 +68,9 @@ export default class extends React.Component {
 				{
 					this.alphabet().map((c, k) => {
 						return (
-							<View>
+							<View
+								key={k}
+							>
 								<View
 									style={style.cont}
 								>
@@ -92,6 +94,7 @@ export default class extends React.Component {
 											if (inst.title[0].toLowerCase() == c) {
 												return (
 													<TouchableOpacity
+														key={k}
 														onPress={
 															() => {
 																this.props.navigation.navigate(
