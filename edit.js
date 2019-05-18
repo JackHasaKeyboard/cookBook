@@ -229,7 +229,7 @@ export default class extends React.Component {
 						onPress={this.update}
 					>
 						<Text>
-							Enter
+							Submit
 						</Text>
 					</TouchableOpacity>
 				</View>

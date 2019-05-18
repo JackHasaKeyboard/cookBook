@@ -95,7 +95,7 @@ export default class extends React.Component {
 						onPress={this.handle}
 					>
 						<Text>
-							Enter
+							Submit
 						</Text>
 					</TouchableOpacity>
 				</View>

@@ -250,7 +250,7 @@ export default class extends React.Component {
 						}
 					>
 						<Text>
-							Enter
+							Submit
 						</Text>
 					</TouchableOpacity>
 				</View>
