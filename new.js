@@ -235,12 +235,6 @@ export default class extends React.Component {
 									<View
 										key={i}
 									>
-										<View
-											style={style.cont}
-										>
-											<Text>{i}</Text>
-										</View>
-
 										<TextInput
 											placeholder="Header"
 											onChangeText={
