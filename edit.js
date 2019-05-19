@@ -76,65 +76,83 @@ export default class extends React.Component {
 			<ScrollView
 				style={style.cont}
 			>
-				<Text
-					style={style.h3}
-				>Title</Text>
-
-				<TextInput
-					placeholder="Title"
-					autoCapitalize="none"
-					onChangeText={
-						title => this.setState({
-							title: title
-						})
-					}
-					value={this.state.title}
-					style={style.field}
-				/>
-
-				<Text
-					style={style.h3}
-				>
-					Notes
-				</Text>
-
-				<TextInput
-					placeholder="Notes"
-					autoCapitalize="none"
-					onChangeText={
-						note => this.setState({
-							note: note
-						})
-					}
-					value={this.state.note}
-					style={style.field}
-				/>
-
-				<View
-					style={style.cont}
-				>
-					<Text
-						style={style.h3}
+				<View>
+					<View
+						style={style.cont}
 					>
-						Ingredients
-					</Text>
+						<Text
+							style={style.h3}
+						>Title</Text>
+					</View>
 
-					<TouchableOpacity
-						onPress={
-							() => {
-								this.setState({
-									ingredient: [
-										...this.state.ingredient,
-										""
-									]
-								});
-							}
+					<TextInput
+						placeholder="Title"
+						autoCapitalize="none"
+						onChangeText={
+							title => this.setState({
+								title: title
+							})
 						}
+						value={this.state.title}
+						style={style.field}
+					/>
+				</View>
+
+				<View>
+					<View
+						style={style.cont}
 					>
-						<Text>
-							New
+						<Text
+							style={style.h3}
+						>
+							Notes
 						</Text>
-					</TouchableOpacity>
+					</View>
+
+					<TextInput
+						placeholder="Notes"
+						autoCapitalize="none"
+						onChangeText={
+							note => this.setState({
+								note: note
+							})
+						}
+						value={this.state.note}
+						style={style.field}
+					/>
+				</View>
+
+				<View>
+					<View
+						style={style.cont}
+					>
+						<Text
+							style={style.h3}
+						>
+							Ingredients
+						</Text>
+					</View>
+
+					<View
+						style={style.cont}
+					>
+						<TouchableOpacity
+							onPress={
+								() => {
+									this.setState({
+										ingredient: [
+											...this.state.ingredient,
+											""
+										]
+									});
+								}
+							}
+						>
+							<Text>
+								New
+							</Text>
+						</TouchableOpacity>
+					</View>
 
 					<View>
 						{
@@ -158,34 +176,40 @@ export default class extends React.Component {
 					</View>
 				</View>
 
-				<View
-					style={style.cont}
-				>
-					<Text
-						style={style.h3}
+				<View>
+					<View
+						style={style.cont}
 					>
-						Steps
-					</Text>
-
-					<TouchableOpacity
-						onPress={
-							() => {
-								this.setState({
-									step: [
-										...this.state.step,
-										{
-											header: "",
-											desc: ""
-										}
-									]
-								});
-							}
-						}
-					>
-						<Text>
-							New
+						<Text
+							style={style.h3}
+						>
+							Steps
 						</Text>
-					</TouchableOpacity>
+					</View>
+
+					<View
+						style={style.cont}
+					>
+						<TouchableOpacity
+							onPress={
+								() => {
+									this.setState({
+										step: [
+											...this.state.step,
+											{
+												header: "",
+												desc: ""
+											}
+										]
+									});
+								}
+							}
+						>
+							<Text>
+								New
+							</Text>
+						</TouchableOpacity>
+					</View>
 
 					<View>
 						{
@@ -194,7 +218,11 @@ export default class extends React.Component {
 									<View
 										key={i}
 									>
-										<Text>{i}</Text>
+										<View
+											style={style.cont}
+										>
+											<Text>{i}</Text>
+										</View>
 
 										<TextInput
 											placeholder="Header"
@@ -222,16 +250,18 @@ export default class extends React.Component {
 					</View>
 				</View>
 
-				<View
-					style={style.cont}
-				>
-					<TouchableOpacity
-						onPress={this.update}
+				<View>
+					<View
+						style={style.cont}
 					>
-						<Text>
-							Submit
-						</Text>
-					</TouchableOpacity>
+						<TouchableOpacity
+							onPress={this.update}
+						>
+							<Text>
+								Submit
+							</Text>
+						</TouchableOpacity>
+					</View>
 				</View>
 			</ScrollView>
 		);
