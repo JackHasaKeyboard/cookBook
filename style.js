@@ -8,7 +8,6 @@ import Head from "./head";
 export default StyleSheet.create({
 	cover: {
 		flex: 1,
-		padding: 26,
 		backgroundColor: "#303030"
 	},
 	page: {
