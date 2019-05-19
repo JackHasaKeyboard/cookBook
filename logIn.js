@@ -30,10 +30,7 @@ export default class extends React.Component {
 			)
 			.then(() => {
 				this.props.navigation.navigate(
-					"Profile",
-					{
-						user: firebase.auth().currentUser
-					}
+					"Profile"
 				)
 			})
 			.catch(err => this.setState({

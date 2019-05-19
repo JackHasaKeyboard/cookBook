@@ -20,7 +20,7 @@ export default class extends React.Component {
       ln: [],
       recipe: [],
 
-			currentUser: {}
+			user: {}
     };
   }
 
@@ -37,7 +37,7 @@ export default class extends React.Component {
 
 		firebase.auth().onAuthStateChanged((user) => {
 				this.setState({
-					currentUser: user
+					user: user
 				});
 			}
 		);
@@ -51,7 +51,7 @@ export default class extends React.Component {
 				style={style.cont}
 			>
 				{
-					recipe.email == this.state.currentUser.email && (
+					recipe.email == this.state.user.email && (
 						<View
 							style={style.cont}
 						>
@@ -80,15 +80,7 @@ export default class extends React.Component {
 						style={style.h1}
 					>{recipe.title}</Text>
 
-					<TouchableOpacity
-						onPress={
-							() => {
-								this.props.navigation.navigate(
-									"Profile"
-								)
-							}
-						}
-					>
+					<TouchableOpacity>
 						<Text
 							style={style.h2}
 						>{recipe.author}</Text>

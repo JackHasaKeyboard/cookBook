@@ -34,10 +34,10 @@ export default class extends React.Component {
 
 	componentDidMount() {
     this.setState({
-			user: this.props.navigation.getParam("user"),
+			user: firebase.auth().currentUser,
 
-			email: this.props.navigation.getParam("user").email,
-			author: this.props.navigation.getParam("user").displayName,
+			email: firebase.auth().currentUser.email,
+			author: firebase.auth().currentUser.displayName,
 
 			title: "",
 			ingredient: [

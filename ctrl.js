@@ -45,12 +45,7 @@ export default class extends React.Component {
 					]}
 				>
 					<TouchableOpacity
-						onPress={() => this.props.navigation.navigate(
-							"Profile",
-							{
-								user: this.state.user
-							}
-						)}
+						onPress={() => this.props.navigation.navigate("Profile")}
 						style={style.btn}
 					>
 						<Text>{this.state.user.displayName}</Text>

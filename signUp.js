@@ -39,12 +39,7 @@ export default class extends React.Component {
 						firebase.auth().currentUser.updateProfile({
 							displayName: this.state.name
 						}).then(() => {
-							this.props.navigation.navigate(
-								"Profile",
-								{
-									user: firebase.auth().currentUser
-								}
-							);
+							this.props.navigation.navigate("Profile");
 						});
 					});
 			})

@@ -17,10 +17,9 @@ export default class extends React.Component {
 		super(props);
 
 		this.state = {
-			user: {},
 			recipe: {},
 
-			currentUser: {}
+			user: {}
 		};
 	}
 
@@ -29,21 +28,17 @@ export default class extends React.Component {
 			root = firebase.database().ref(),
 			ref = root.child("recipe");
 
-		this.setState(
-			{
-				user: this.props.navigation.getParam("user")
-			},
-			() => ref.orderByChild("email").equalTo(this.state.user.email).on("value", snap => {
-				this.setState({
-					recipe: snap.val()
-				});
-			})
-		);
-
 		firebase.auth().onAuthStateChanged((user) => {
-				this.setState({
-					currentUser: user
-				});
+			this.setState(
+					{
+						user: firebase.auth().currentUser
+					},
+					() => ref.orderByChild("email").equalTo(this.state.user.email).on("value", snap => {
+						this.setState({
+							recipe: snap.val()
+						});
+					})
+				);
 			}
 		);
 	}
@@ -62,19 +57,14 @@ export default class extends React.Component {
 				</View>
 
 				{
-					this.state.user.email == this.state.currentUser.email && (
+					this.state.user.email && (
 						<View
 							style={style.cont}
 						>
 							<TouchableOpacity
 								onPress={
 									() => {
-										this.props.navigation.navigate(
-											"New",
-											{
-												user: this.state.currentUser
-											}
-										)
+										this.props.navigation.navigate("New")
 									}
 								}
 							>
