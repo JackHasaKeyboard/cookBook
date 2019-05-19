@@ -63,7 +63,7 @@ export default class extends React.Component {
   render() {
     return (
 			<ScrollView
-				style={style.cont}
+				contentContainerStyle={style.cont}
 			>
 				{
 					this.alphabet().map((c, k) => {
