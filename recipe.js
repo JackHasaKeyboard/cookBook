@@ -148,7 +148,12 @@ export default class extends React.Component {
 										</View>
 
 										<View
-											style={style.cont}
+											style={[
+												style.cont,
+												{
+													flex: 1
+												}
+											]}
 										>
 											<Text
 												style={[
