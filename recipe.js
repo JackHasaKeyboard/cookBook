@@ -118,12 +118,14 @@ export default class extends React.Component {
 					}
 				</View>
 
-				<View
-					style={style.cont}
-				>
-					<Text
-						style={style.h3}
-					>Steps</Text>
+				<View>
+					<View
+						style={style.cont}
+					>
+						<Text
+							style={style.h3}
+						>Steps</Text>
+					</View>
 
 					{
 						recipe.step != undefined
