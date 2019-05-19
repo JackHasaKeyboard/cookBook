@@ -17,7 +17,6 @@ export default class extends React.Component {
     super();
 
     this.state = {
-      ln: [],
       recipe: [],
 
 			user: {}
