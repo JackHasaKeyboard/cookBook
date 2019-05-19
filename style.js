@@ -66,7 +66,10 @@ export default StyleSheet.create({
 		color: "red"
 	},
 
-	i: {
+	header: {
 		lineHeight: 24
+	},
+	desc: {
+		lineHeight: 18
 	}
 });

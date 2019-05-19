@@ -140,7 +140,7 @@ export default class extends React.Component {
 											<Text
 												style={[
 													style.h2,
-													style.i
+													style.header
 												]}
 											>{i + 1}</Text>
 										</View>
@@ -148,7 +148,12 @@ export default class extends React.Component {
 										<View
 											style={style.cont}
 										>
-											<Text>{inst.header}</Text>
+											<Text
+												style={[
+													style.h3,
+													style.desc
+												]}
+											>{inst.header}</Text>
 											<Text>{inst.desc}</Text>
 										</View>
 									</View>
