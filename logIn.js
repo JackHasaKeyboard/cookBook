@@ -28,7 +28,14 @@ export default class extends React.Component {
 				this.state.email,
 				this.state.password
 			)
-			.then(() => {this.props.navigation.navigate("Profile")})
+			.then(() => {
+				this.props.navigation.navigate(
+					"Profile",
+					{
+						user: firebase.auth().currentUser
+					}
+				)
+			})
 			.catch(err => this.setState({
 				err: err.message
 			}));
