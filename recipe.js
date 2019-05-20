@@ -107,9 +107,11 @@ export default class extends React.Component {
 
 					{
 						recipe.ingredient != undefined
-							? recipe.ingredient.map((inst) => {
+							? recipe.ingredient.map((inst, k) => {
 								return (
-									<Text>{`\u2022 ${inst}`}</Text>
+									<Text
+										key={k}
+									>{`\u2022 ${inst}`}</Text>
 								);
 							})
 							: <Text>...</Text>
@@ -130,6 +132,7 @@ export default class extends React.Component {
 							? recipe.step.map((inst, i) => {
 								return (
 									<View
+										key={i}
 										style={{
 											flexDirection: "row"
 										}}
