@@ -79,11 +79,9 @@ export default class extends React.Component {
 						style={style.h1}
 					>{recipe.title}</Text>
 
-					<TouchableOpacity>
-						<Text
-							style={style.h2}
-						>{recipe.author}</Text>
-					</TouchableOpacity>
+					<Text
+						style={style.h2}
+					>{recipe.author}</Text>
 				</View>
 
 				{
