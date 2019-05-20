@@ -50,7 +50,7 @@ export default class extends React.Component {
 				style={style.cont}
 			>
 				{
-					recipe.email == this.state.user.email && (
+					(this.state.user && recipe.email == this.state.user.email) && (
 						<View
 							style={style.cont}
 						>
