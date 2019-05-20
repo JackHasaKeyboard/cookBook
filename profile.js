@@ -33,11 +33,15 @@ export default class extends React.Component {
 					{
 						user: firebase.auth().currentUser
 					},
-					() => ref.orderByChild("email").equalTo(this.state.user.email).on("value", snap => {
-						this.setState({
-							recipe: snap.val()
-						});
-					})
+					() => {
+						if (this.state.user) {
+							ref.orderByChild("email").equalTo(this.state.user.email).on("value", snap => {
+								this.setState({
+									recipe: snap.val()
+								});
+							})
+						}
+					}
 				);
 			}
 		);
@@ -48,16 +52,20 @@ export default class extends React.Component {
 			<ScrollView
 				style={style.cont}
 			>
-				<View
-					style={style.cont}
-				>
-					<Text
-						style={style.h1}
-					>{this.state.user.displayName}</Text>
-				</View>
+				{
+					this.state.user && (
+						<View
+							style={style.cont}
+						>
+							<Text
+								style={style.h1}
+							>{this.state.user.displayName}</Text>
+						</View>
+					)
+				}
 
 				{
-					this.state.user.email && (
+					this.state.user && (
 						<View
 							style={style.cont}
 						>

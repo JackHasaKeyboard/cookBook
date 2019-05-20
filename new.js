@@ -33,26 +33,30 @@ export default class extends React.Component {
   }
 
 	componentDidMount() {
-    this.setState({
-			user: firebase.auth().currentUser,
+		if (
+			firebase.auth().currentUser
+		) {
+			this.setState({
+				user: firebase.auth().currentUser,
 
-			email: firebase.auth().currentUser.email,
-			author: firebase.auth().currentUser.displayName,
+				email: firebase.auth().currentUser.email,
+				author: firebase.auth().currentUser.displayName,
 
-			title: "",
-			ingredient: [
-				""
-			],
-			note: "",
-			step: [
-				{
-					header: "",
-					desc: ""
-				}
-			],
+				title: "",
+				ingredient: [
+					""
+				],
+				note: "",
+				step: [
+					{
+						header: "",
+						desc: ""
+					}
+				],
 
-			err: null
-    });
+				err: null
+			});
+		}
 	}
 
 	post = () => {
