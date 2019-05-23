@@ -118,6 +118,8 @@ export default class extends React.Component {
 					<TextInput
 						placeholder="Notes"
 						autoCapitalize="none"
+						multiline={true}
+						minHeight={65}
 						onChangeText={
 							note => this.setState({
 								note: note
@@ -236,6 +238,8 @@ export default class extends React.Component {
 
 										<TextInput
 											placeholder="Instructions"
+											multiline={true}
+											minHeight={65}
 											onChangeText={
 												(txt) => {
 													this.state.step[i]["desc"] = txt;
