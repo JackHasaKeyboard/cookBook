@@ -17,6 +17,8 @@ export default class DogEar extends React.Component {
 			 width={60}
 			 height={60}
 			 style={{
+				 top: -8,
+				 left: -8,
 				 position: "absolute",
 				 zIndex: 1
 			 }}

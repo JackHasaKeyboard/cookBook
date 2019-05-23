@@ -39,7 +39,6 @@ export default class extends React.Component {
 			return (
 				<View
 					style={[
-						style.cont,
 						style.head,
 						style.ctrl
 					]}
@@ -75,7 +74,6 @@ export default class extends React.Component {
 			return (
 				<View
 					style={[
-						style.cont,
 						style.head,
 						style.ctrl
 					]}

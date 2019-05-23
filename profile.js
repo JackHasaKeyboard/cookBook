@@ -6,6 +6,8 @@ import {
 	TouchableOpacity
 } from "react-native";
 
+import Head from "./head";
+
 import style from "./style";
 
 import * as firebase from "firebase";
@@ -50,8 +52,12 @@ export default class extends React.Component {
   render() {
     return (
 			<ScrollView
-				style={style.cont}
+				contentContainerStyle={style.cont}
 			>
+				<Head
+					navigation={this.props.navigation}
+				/>
+
 				{
 					this.state.user && (
 						<View

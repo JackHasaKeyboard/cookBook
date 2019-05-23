@@ -24,7 +24,7 @@ export default class Head extends React.Component {
 					]}
 				>
 					{
-						this.props.navigation.state.index > 0 && (
+						!this.props.navigation.isFirstRouteInParent() > 0 && (
 							<DogEar
 								navigation={this.props.navigation}
 							/>

@@ -11,7 +11,6 @@ import {
 	withNavigation
 } from "react-navigation";
 
-import Head from "./head";
 import Index from "./index";
 import Recipe from "./recipe";
 import Profile from "./profile";
@@ -37,7 +36,7 @@ const
 			Edit: Edit
 		}, {
 			defaultNavigationOptions: {
-				header: (props) => <Head {...props} />
+				header: null
 			}
 		}
 	),
