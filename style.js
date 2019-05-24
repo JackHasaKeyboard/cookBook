@@ -13,7 +13,14 @@ export default StyleSheet.create({
 	page: {
 		flex: 1,
 		margin: 26,
-		backgroundColor: "#fff"
+		backgroundColor: "#fff",
+
+		shadowOffset: {
+			width: 1,
+			height: 1
+		},
+		shadowColor: "#111",
+		shadowOpacity: 0.16
 	},
 
 	head: {
