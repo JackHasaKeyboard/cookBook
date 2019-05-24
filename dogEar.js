@@ -6,6 +6,8 @@ import {
 
 import Triangle from "react-native-triangle";
 
+import style from "./style";
+
 export default class DogEar extends React.Component {
 	constructor(props) {
 		super(props);
@@ -16,12 +18,7 @@ export default class DogEar extends React.Component {
 		 <TouchableOpacity
 			 width={60}
 			 height={60}
-			 style={{
-				 top: -8,
-				 left: -8,
-				 position: "absolute",
-				 zIndex: 1
-			 }}
+			 style={style.back}
 
 			 onPress={() => {
 				 this.props.navigation.dispatch({
@@ -34,19 +31,7 @@ export default class DogEar extends React.Component {
 					width={60}
 					height={60}
 					color="#fff"
-					style={{
-						position: "absolute",
-
-						left: 0,
-						top: 0,
-
-						shadowOffset: {
-							width: 1,
-							height: 1
-						},
-						shadowColor: "#111",
-						shadowOpacity: 0.16
-					}}
+					style={style.dogEar}
 				/>
 			</TouchableOpacity>
 		);

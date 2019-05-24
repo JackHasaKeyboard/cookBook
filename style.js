@@ -25,6 +25,25 @@ export default StyleSheet.create({
 		textAlign: "center",
 		margin: 8
 	},
+	back: {
+		top: -8,
+		left: -8,
+		position: "absolute",
+		zIndex: 1
+	},
+	dogEar: {
+		position: "absolute",
+
+		left: 0,
+		top: 0,
+
+		shadowOffset: {
+			width: 1,
+			height: 1
+		},
+		shadowColor: "#111",
+		shadowOpacity: 0.16
+	},
 
 	body: {
 		height: 0
